@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<div>
+    <h1>用户注册</h1>
+    <!--
+    使用正则表达式完成用户名及密码强度验证
+    -->
+    <form action="/user/register" enctype="multipart/form-data" method="post">
+        <label for="input_username">用户名: </label><input id="input_username" type="text" name="username" placeholder="必须包含字母、下划线和数字" style="width: 200px"
+                                          pattern="^(?![^a-zA-Z]+$)(?!\D+$)(?![^_]+$).{3,15}$" required> <br>
+        <label for="input_email">注册邮箱: </label><input id="input_email" type="text" name="userEmail"
+                                           pattern="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" style="width: 200px"
+                                           required> <br>
+        <label for="input_password">密码: </label><input id="input_password" type="password" name="password" placeholder="必须含有大小写字母和数字" style="width: 200px"
+                                         pattern="^(?![^a-z]+$)(?![^A-Z]+$)(?!\D+$).{7,15}$" required> <br>
+        <button type="submit">注册</button>
+    </form>
+</div>
+</body>
+</html>
